@@ -58,6 +58,14 @@ namespace ApertureScience.Controllers
                 return BadRequest(ModelState);
             }
 
+            var emailAuth = await _userRepository.GetByEmail(user.Email);
+
+            if (emailAuth != null)
+            {
+                respCreateUser.conflicts.Add(new Conflicts { Problems = true, Description = "El correo ya existe" });
+
+                return BadRequest(respCreateUser);
+            }
 
             var created = await _userRepository.InsertUser(user);
 
@@ -90,6 +98,15 @@ namespace ApertureScience.Controllers
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
+            }
+
+            var emailAuth = await _userRepository.GetByEmail(user.Email);
+
+            if (emailAuth != null)
+            {
+                respUpdateUser.conflicts.Add(new Conflicts { Problems = true, Description = "El correo ya existe" });
+
+                return BadRequest(respUpdateUser);
             }
 
             var update = await _userRepository.UpdateUser(user);
