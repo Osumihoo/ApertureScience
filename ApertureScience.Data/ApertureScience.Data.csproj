@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <COMReference Include="SAPbobsCOM">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>10</VersionMajor>
+      <Guid>fc8030be-f5d2-4b8e-8f92-44228fe30100</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.24" />
+    <PackageReference Include="HanaGenericRepository.dll" Version="1.4.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+    <PackageReference Include="MySql.Data" Version="8.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Data.Odbc" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ApertureScience.Model\ApertureScience.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Sap.Data.Hana.v4.5">
+      <HintPath>..\..\..\..\..\..\Program Files\SAP\hdbclient\ado.net\v4.5\Sap.Data.Hana.v4.5.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

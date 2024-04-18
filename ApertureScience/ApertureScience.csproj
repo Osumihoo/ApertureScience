@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.24" />
+    <PackageReference Include="HanaGenericRepository.dll" Version="1.4.8" />
+    <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="8.0.0" />
+    <PackageReference Include="MySql.Data" Version="8.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ApertureScience.Data\ApertureScience.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Sap.Data.Hana.Core.v2.1">
+      <HintPath>..\..\..\..\..\..\Program Files\SAP\hdbclient\dotnetcore\v2.1\Sap.Data.Hana.Core.v2.1.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+</Project>
