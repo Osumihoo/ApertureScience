@@ -58,11 +58,6 @@ namespace ApertureScience.Data.Repositories
         {
             var db = dbConnection();
 
-            //var sql = @" SELECT users.Id, users.Name, users.LastName, users.Email, users.Username, users.Password, roles.Type AS IdRole, departments.Name AS IdDepartment
-            //                FROM users
-            //                INNER JOIN roles ON roles.Id = users.IdRole
-            //                INNER JOIN departments ON departments.Id = users.IdDepartment
-            //            WHERE users.Id = @Id";
             var sql = @" SELECT users.Id, users.Name, users.LastNameP, users.LastNameM, users.Email, users.Username, users.Password, users.Status, users.IdRole, roles.Type AS RolName, users.IdDepartment, departments.Name AS DepartmentName
                             FROM users
                             INNER JOIN departments ON departments.Id = users.IdDepartment
@@ -91,11 +86,7 @@ namespace ApertureScience.Data.Repositories
 
             var sql = @" INSERT INTO users(Name, LastNameP, LastNameM, Email, Username, Password, IdRole, IdDepartment)
                         VALUES (@Name, @LastNameP, @LastNameM, @Email, @Username, @Password, @IdRole, @IdDepartment)";
-            //var sql = @" INSERT INTO users(Name, LastName, Email, Username, Password, IdRole, IdDepartment)
-            //            VALUES (@Name, @LastName, @Email, @Username, AES_ENCRYPT(@Password), @IdRole, @IdDepartment)";
 
-            //SELECT * FROM users 
-            //WHERE AES_ENCRYPT(password, usuario.Clave) = @PASS AND usuario.Email = @Email;
             var result = await db.ExecuteAsync(sql, new
             { user.Name, user.LastNameP, user.LastNameM, user.Email, user.Username, Password = hashedPassword, user.IdRole, user.IdDepartment });
 

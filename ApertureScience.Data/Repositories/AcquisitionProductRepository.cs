@@ -42,6 +42,7 @@ namespace ApertureScience.Data.Repositories
 
             var sql = @" SELECT Id, 
                                 Name, 
+                                Type, 
                                 Status
                         FROM acquisitionproducts";
 
@@ -54,6 +55,7 @@ namespace ApertureScience.Data.Repositories
 
             var sql = @" SELECT Id, 
                                 Name, 
+                                Type, 
                                 Status
                         FROM acquisitionproducts
                         WHERE acquisitionproducts.Id = @Id";
@@ -65,12 +67,15 @@ namespace ApertureScience.Data.Repositories
         {
             var db = dbConnection();
 
-            var sql = @" INSERT INTO acquisitionproducts(Name)
-                        VALUES (@Name)";
+            var sql = @" INSERT INTO acquisitionproducts(Name,
+                                                        Type)
+                        VALUES (@Name,
+                                @Type)";
 
             var result = await db.ExecuteAsync(sql, new
             {
-                acquisitionProduct.Name
+                acquisitionProduct.Name,
+                acquisitionProduct.Type
             });
 
             return result > 0;
@@ -85,6 +90,9 @@ namespace ApertureScience.Data.Repositories
 
             if (!string.IsNullOrWhiteSpace(acquisitionProduct.Name))
                 sqlBuilder.Append("Name = @Name,");
+
+            if (acquisitionProduct.Type != null)
+                sqlBuilder.Append("Type = @Type,");
 
             if (acquisitionProduct.Status != null)
                 sqlBuilder.Append("Status = @Status,");
@@ -102,6 +110,7 @@ namespace ApertureScience.Data.Repositories
             var result = await db.ExecuteAsync(sql, new
             {
                 acquisitionProduct.Name,
+                acquisitionProduct.Type,
                 acquisitionProduct.Status,
                 acquisitionProduct.Id
             });

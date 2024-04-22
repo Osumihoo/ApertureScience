@@ -39,7 +39,8 @@ namespace ApertureScience.Controllers
             respCreateAcquisitionProduct.conflicts = new List<Conflicts>();
 
             if (acquisitionProduct == null ||
-                string.IsNullOrWhiteSpace(acquisitionProduct.Name) 
+                string.IsNullOrWhiteSpace(acquisitionProduct.Name) ||
+                acquisitionProduct.Type < 1 || acquisitionProduct.Type > 2
                 )
             {
                 respCreateAcquisitionProduct.conflicts.Add(new Conflicts { Problems = true, Description = "Todos los campos son obligatorios" });
