@@ -35,6 +35,7 @@ builder.Services.AddScoped<IAcquisitionEntryBySupplierHRepository, AcquisitionEn
 builder.Services.AddScoped<IAcquisitionEntryBySupplierLRepository, AcquisitionEntryBySupplierLRepository>();
 builder.Services.AddScoped<IAcquisitionEntryHRepository, AcquisitionEntryHRepository>();
 builder.Services.AddScoped<IAcquisitionEntryLRepository, AcquisitionEntryLRepository>();
+builder.Services.AddScoped<IAcquisitionItemByDepartmentRepository, AcquisitionItemByDepartmentRepository>();
 builder.Services.AddScoped<IAcquisitionMeasurementRepository, AcquisitionMeasurementRepository>();
 builder.Services.AddScoped<IAcquisitionModelRepository, AcquisitionModelRepository>();
 builder.Services.AddScoped<IAcquisitionProductRepository, AcquisitionProductRepository>();
