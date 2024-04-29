@@ -46,7 +46,7 @@ namespace ApertureScience.Controllers
             respCreateAcquisitionReleaseH.responseIdReleaseH = new ResponseIdReleaseH();
             respCreateAcquisitionReleaseH.conflicts = new List<Conflicts>();
 
-            if (respCreateAcquisitionReleaseH == null ||
+            if (acquisitionReleaseH == null ||
                 !DateTime.TryParse(acquisitionReleaseH.Date.ToString(), out _) ||
                 string.IsNullOrWhiteSpace(acquisitionReleaseH.Type) ||
                 string.IsNullOrWhiteSpace(acquisitionReleaseH.Elaborated) ||

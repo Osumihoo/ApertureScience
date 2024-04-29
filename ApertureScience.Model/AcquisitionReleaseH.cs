@@ -14,7 +14,7 @@ namespace ApertureScience.Model
         public string Elaborated { get; set; }
         public string Observations { get; set; }
         public int? ReceptionCode { get; set; }
-        //public DateTime? ReceptionDate { get; set; }
+        public DateTime? ReceptionDate { get; set; }
         public int Status { get; set; }
         public int IdAddressRelease { get; set; }
         public string AddressReleaseStreet { get; set; }
