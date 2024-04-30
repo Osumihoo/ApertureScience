@@ -23,9 +23,9 @@ namespace ApertureScience.Model
         public int IdAddressEntry { get; set; }
         public string AddressEntryStreet { get; set; }
         public int IdAcCarrier { get; set; }
-        public string CarrierName { get; set; }
+        public string AcCarrierName { get; set; }
         public int IdAcVehicle { get; set; }
-        public string VehicleName { get; set; }
+        public string AcVehicleName { get; set; }
         public int IdDepartmentRelease { get; set; }
         public string DepartmentReleaseName { get; set; }
         public int IdDepartmentEntry { get; set; }
