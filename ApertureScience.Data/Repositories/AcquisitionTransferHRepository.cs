@@ -111,8 +111,8 @@ namespace ApertureScience.Data.Repositories
                         INNER JOIN addresses AS addressesEntry ON addressesEntry.Id = acquisitiontransferh.IdAddressEntry
                         INNER JOIN acquisitioncarriers ON acquisitioncarriers.Id = acquisitiontransferh.IdAcCarrier
                         INNER JOIN acquisitionvehicles ON acquisitionvehicles.Id = acquisitiontransferh.IdAcVehicle
-                        INNER JOIN departments AS departmentRelease ON departments.Id = acquisitiontransferh.IdDepartmentRelease
-                        INNER JOIN departments AS departmentEntry ON departments.Id = acquisitiontransferh.IdDepartmentRelease
+                        INNER JOIN departments AS departmentRelease ON departmentRelease.Id = acquisitiontransferh.IdDepartmentRelease
+                        INNER JOIN departments AS departmentEntry ON departmentEntry.Id = acquisitiontransferh.IdDepartmentRelease
                         ORDER BY acquisitiontransferh.Id";
 
             return await db.QueryAsync<AcquisitionTransferH>(sql, new { });
@@ -145,8 +145,8 @@ namespace ApertureScience.Data.Repositories
                         INNER JOIN addresses AS addressesEntry ON addressesEntry.Id = acquisitiontransferh.IdAddressEntry
                         INNER JOIN acquisitioncarriers ON acquisitioncarriers.Id = acquisitiontransferh.IdAcCarrier
                         INNER JOIN acquisitionvehicles ON acquisitionvehicles.Id = acquisitiontransferh.IdAcVehicle
-                        INNER JOIN departments AS departmentRelease ON departments.Id = acquisitiontransferh.IdDepartmentRelease
-                        INNER JOIN departments AS departmentEntry ON departments.Id = acquisitiontransferh.IdDepartmentRelease
+                        INNER JOIN departments AS departmentRelease ON departmentRelease.Id = acquisitiontransferh.IdDepartmentRelease
+                        INNER JOIN departments AS departmentEntry ON departmentEntry.Id = acquisitiontransferh.IdDepartmentRelease
                         WHERE acquisitiontransferh.Date >= @StartDate AND 
                                 acquisitiontransferh.Date <= @EndDate
                         ORDER BY acquisitiontransferh.Id";
@@ -181,8 +181,8 @@ namespace ApertureScience.Data.Repositories
                         INNER JOIN addresses AS addressesEntry ON addressesEntry.Id = acquisitiontransferh.IdAddressEntry
                         INNER JOIN acquisitioncarriers ON acquisitioncarriers.Id = acquisitiontransferh.IdAcCarrier
                         INNER JOIN acquisitionvehicles ON acquisitionvehicles.Id = acquisitiontransferh.IdAcVehicle
-                        INNER JOIN departments AS departmentRelease ON departments.Id = acquisitiontransferh.IdDepartmentRelease
-                        INNER JOIN departments AS departmentEntry ON departments.Id = acquisitiontransferh.IdDepartmentRelease
+                        INNER JOIN departments AS departmentRelease ON departmentRelease.Id = acquisitiontransferh.IdDepartmentRelease
+                        INNER JOIN departments AS departmentEntry ON departmentEntry.Id = acquisitiontransferh.IdDepartmentRelease
                         WHERE acquisitiontransferh.Id = @Id";
 
             return await db.QueryFirstOrDefaultAsync<AcquisitionTransferH>(sql, new { Id = id });
