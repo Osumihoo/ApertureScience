@@ -77,16 +77,6 @@ namespace ApertureScience.Controllers
             return Created("created", respCreateAcquisitionReleaseL);
         }
 
-        // PUT api/<AcquisitionReleaseLController>/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
 
-        //// DELETE api/<AcquisitionReleaseLController>/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
     }
 }
