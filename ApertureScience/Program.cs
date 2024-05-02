@@ -43,6 +43,7 @@ builder.Services.AddScoped<IAcquisitionReleaseHRepository, AcquisitionReleaseHRe
 builder.Services.AddScoped<IAcquisitionReleaseLRepository, AcquisitionReleaseLRepository>();
 builder.Services.AddScoped<IAcquisitionSupplyRepository, AcquisitionSupplyRepository>();
 builder.Services.AddScoped<IAcquisitionTransferHRepository, AcquisitionTransferHRepository>();
+builder.Services.AddScoped<IAcquisitionTransferLRepository, AcquisitionTransferLRepository>();
 builder.Services.AddScoped<IAcquisitionVehicleRepository, AcquisitionVehicleRepository>();
 builder.Services.AddScoped<IAddressRepository, AddressRepository>();
 builder.Services.AddScoped<IAreaRepository, AreaRepository>();
